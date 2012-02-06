@@ -20,6 +20,8 @@ var Composition = Edge.Composition, Symbol = Edge.Symbol; // aliases for commonl
 Symbol.bindTimelineAction(compId, symbolName, "Default Timeline", "play", function(sym, e) {
     // insert code to be run at timeline play here
 //    $("body").css("background-color", "#ffff00");
+	var screen1 = sym.getSymbol("Sheep3");
+	screen1.play("fadeIn");
 
     window.doStageLayout = function() {
 //	    jQuery("body").css("background-color", "#ff0000");
@@ -60,9 +62,6 @@ Symbol.bindTimelineAction(compId, symbolName, "Default Timeline", "play", functi
        }
        var tm = (h - (portrait?960:640)*zoom)/2;
        stage.css({"margin-left": "auto", "margin-right":"auto", "margin-top":tm});
-
-	var screen1 = sym.getSymbol("Sheep3");
-	screen1.play("fadeIn");
 
        clearTimeout(window.timerId);
     };
@@ -139,6 +138,7 @@ sym.stop();
 
 
 
+
 })("stage");
 //Edge symbol end:'stage'
 
@@ -146,6 +146,7 @@ sym.stop();
 
 //Edge symbol: 'sheep'
 (function(symbolName) {
+
 
 
 
@@ -252,6 +253,7 @@ sym.stop();
 
 
 
+
 })("Panel1");
 //Edge symbol end:'Panel1'
 
@@ -329,6 +331,7 @@ sym.stop(0);
 
 
 
+
 })("Panel2");
 //Edge symbol end:'Panel2'
 
@@ -395,6 +398,7 @@ sym.stop();
 
 
 
+
 })("Main");
 //Edge symbol end:'Main'
 
@@ -402,6 +406,7 @@ sym.stop();
 
 //Edge symbol: 'log'
 (function(symbolName) {
+
 
 
 
@@ -531,6 +536,7 @@ Symbol.bindElementAction(compId, symbolName, "${_label}", "click", function(sym,
 
 
 
+
 })("svgSheep");
 //Edge symbol end:'svgSheep'
 
@@ -538,6 +544,7 @@ Symbol.bindElementAction(compId, symbolName, "${_label}", "click", function(sym,
 
 //Edge symbol: 'roundel'
 (function(symbolName) {
+
 
 
 
@@ -581,6 +588,7 @@ Symbol.bindElementAction(compId, symbolName, "${_label}", "click", function(sym,
 
 
 
+
 })("Status");
 //Edge symbol end:'Status'
 
@@ -588,6 +596,7 @@ Symbol.bindElementAction(compId, symbolName, "${_label}", "click", function(sym,
 
 //Edge symbol: 'status'
 (function(symbolName) {
+
 
 
 
@@ -629,6 +638,7 @@ sym.stop(0);
 
 
 
+
 })("endMessage");
 //Edge symbol end:'endMessage'
 
@@ -660,6 +670,7 @@ sym.stop();
 
 
 
+
 })("Sheep3");
 //Edge symbol end:'Sheep3'
 
@@ -680,6 +691,7 @@ sym.stop();
 
 });
 //Edge binding end
+
 
 
 
