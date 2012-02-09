@@ -20,8 +20,6 @@ var Composition = Edge.Composition, Symbol = Edge.Symbol; // aliases for commonl
 Symbol.bindTimelineAction(compId, symbolName, "Default Timeline", "play", function(sym, e) {
     // insert code to be run at timeline play here
 //    $("body").css("background-color", "#ffff00");
-	var screen1 = sym.getSymbol("Sheep3");
-	screen1.play("fadeIn");
 
     window.doStageLayout = function() {
 //	    jQuery("body").css("background-color", "#ff0000");
@@ -65,13 +63,17 @@ Symbol.bindTimelineAction(compId, symbolName, "Default Timeline", "play", functi
 
        clearTimeout(window.timerId);
     };
-
+    
     if(sym.portrait === undefined) {
-    	window.timerId = setTimeout("window.doStageLayout()",100);
-    };
+   	window.timerId = setTimeout("window.doStageLayout()",100);
+	$(window).resize(window.doStageLayout);
+	$(window).bind("orientationchange", window.doStageLayout);
+	var screen1 = sym.getSymbol("Sheep3");
+	screen1.play("fadeIn");
+    }
 
-    $(window).resize(window.doStageLayout);
-    $(window).bind("orientationchange", window.doStageLayout);
+
+    
 
 });
 //Edge binding end
@@ -80,14 +82,14 @@ Symbol.bindTimelineAction(compId, symbolName, "Default Timeline", "play", functi
 
 
 
-Symbol.bindTriggerAction(compId, symbolName, "Default Timeline", 999.98134185315, function(sym, e) {
+Symbol.bindTriggerAction(compId, symbolName, "Default Timeline", 749.98134185315, function(sym, e) {
 // insert code here
 sym.stop();
 
 });
 //Edge binding end
 
-Symbol.bindTriggerAction(compId, symbolName, "Default Timeline", 1999.9502449417, function(sym, e) {
+Symbol.bindTriggerAction(compId, symbolName, "Default Timeline", 1749.9502449417, function(sym, e) {
 // insert code here
 sym.stop();
 
@@ -101,12 +103,8 @@ sym.stop();
 
 
 
-Symbol.bindTriggerAction(compId, symbolName, "Default Timeline", 0, function(sym, e) {
-// insert code here
-sym.stop();
 
-});
-//Edge binding end
+
 
 
 
@@ -146,6 +144,7 @@ sym.stop();
 
 //Edge symbol: 'sheep'
 (function(symbolName) {
+
 
 
 
@@ -254,6 +253,7 @@ sym.stop();
 
 
 
+
 })("Panel1");
 //Edge symbol end:'Panel1'
 
@@ -332,6 +332,7 @@ sym.stop(0);
 
 
 
+
 })("Panel2");
 //Edge symbol end:'Panel2'
 
@@ -399,6 +400,7 @@ sym.stop();
 
 
 
+
 })("Main");
 //Edge symbol end:'Main'
 
@@ -406,6 +408,7 @@ sym.stop();
 
 //Edge symbol: 'log'
 (function(symbolName) {
+
 
 
 
@@ -537,6 +540,7 @@ Symbol.bindElementAction(compId, symbolName, "${_label}", "click", function(sym,
 
 
 
+
 })("svgSheep");
 //Edge symbol end:'svgSheep'
 
@@ -544,6 +548,7 @@ Symbol.bindElementAction(compId, symbolName, "${_label}", "click", function(sym,
 
 //Edge symbol: 'roundel'
 (function(symbolName) {
+
 
 
 
@@ -589,6 +594,7 @@ Symbol.bindElementAction(compId, symbolName, "${_label}", "click", function(sym,
 
 
 
+
 })("Status");
 //Edge symbol end:'Status'
 
@@ -596,6 +602,7 @@ Symbol.bindElementAction(compId, symbolName, "${_label}", "click", function(sym,
 
 //Edge symbol: 'status'
 (function(symbolName) {
+
 
 
 
@@ -639,6 +646,7 @@ sym.stop(0);
 
 
 
+
 })("endMessage");
 //Edge symbol end:'endMessage'
 
@@ -646,29 +654,21 @@ sym.stop(0);
 
 //Edge symbol: 'Sheep3'
 (function(symbolName) {
-Symbol.bindTriggerAction(compId, symbolName, "Default Timeline", 2500, function(sym, e) {
-// insert code here
+
+
+
+
+
+
+
+
+
+Symbol.bindTimelineAction(compId, symbolName, "Default Timeline", "complete", function(sym, e) {
+// insert code to be run at timeline end here
 sym.stop();
 
 });
 //Edge binding end
-
-Symbol.bindTriggerAction(compId, symbolName, "Default Timeline", 4500, function(sym, e) {
-// insert code here
-// stop the timeline at the given position (ms or label)
-sym.stop(0);
-
-});
-//Edge binding end
-
-Symbol.bindTriggerAction(compId, symbolName, "Default Timeline", 0, function(sym, e) {
-// insert code here
-sym.stop();
-
-});
-//Edge binding end
-
-
 
 
 })("Sheep3");
@@ -691,6 +691,7 @@ sym.stop();
 
 });
 //Edge binding end
+
 
 
 
